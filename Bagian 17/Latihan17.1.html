@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Product Explorer - Latihan 17.1</title>
     <style>
+        body { font-family: sans-serif; padding: 20px; }
         .product-card {
             border: 1px solid #ccc;
             padding: 15px;
             margin: 10px;
             border-radius: 8px;
-            max-width: 250px;
+            width: 200px;
             display: inline-block;
             vertical-align: top;
-            font-family: sans-serif;
+            background: #f9f9f9;
         }
         .product-card img {
             width: 100%;
-            height: 150px;
+            height: 120px;
             object-fit: cover;
             border-radius: 4px;
         }
@@ -28,6 +30,71 @@
     <h1>Daftar Produk</h1>
     <div id="product-list"></div>
 
-    <script src="script.js"></script>
+    <script>
+        // Data Dummy untuk Latihan 17.1
+        const dummyProducts = [
+            {
+                thumbnail: "daftarproduk_Laptop.jpg",
+                title: "Laptop Pro",
+                category: "laptop",
+                price: 1200,
+                rating: 4.8
+            },
+            {
+                thumbnail: "daftarproduk_Handphone.jpg",
+                title: "Smartphone Premium",
+                category: "phones",
+                price: 800,
+                rating: 4.5
+            },
+            {
+                thumbnail: "daftarproduk_Headphone.jpg",
+                title: "Wireless Headphones",
+                category: "audio",
+                price: 150,
+                rating: 4.2
+            },
+            {
+                thumbnail: "daftarproduk_Mouse Gaming.jpg",
+                title: "Gaming Mouse",
+                category: "accessories",
+                price: 50,
+                rating: 4.7
+            },
+            {
+                thumbnail: "daftarproduk_Keyboard.jpg",
+                title: "Mechanical Keyboard",
+                category: "accessories",
+                price: 120,
+                rating: 4.6
+            }
+        ];
+
+        // Fungsi untuk merender produk ke DOM
+        function renderProducts(products) {
+            const container = document.querySelector("#product-list");
+            if (!container) return;
+            
+            container.innerHTML = ""; // Bersihkan kontainer sebelum merender ulang
+
+            for (const product of products) {
+                const card = document.createElement("div");
+                card.classList.add("product-card");
+                
+                card.innerHTML = `
+                    <img src="${product.thumbnail}" alt="${product.title}">
+                    <h3>${product.title}</h3>
+                    <p>Kategori: ${product.category}</p>
+                    <p>Harga: $${product.price}</p>
+                    <p>Rating: ⭐${product.rating}</p>
+                `;
+                
+                container.append(card);
+            }
+        }
+
+        // Panggil fungsi render
+        renderProducts(dummyProducts);
+    </script>
 </body>
 </html>

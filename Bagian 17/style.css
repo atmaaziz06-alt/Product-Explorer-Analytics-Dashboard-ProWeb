@@ -1,0 +1,143 @@
+/* --- PREMIUM LIGHT ELEGANT THEME --- */
+:root {
+    --bg-primary: #f8fafc;
+    --bg-card: #ffffff;
+    --border-color: #e2e8f0;
+    --text-main: #0f172a;        /* Hitam pekat modern */
+    --text-muted: #64748b;       /* Biru dongker/abu elegan */
+    --accent-blue: #0284c7;      /* Biru dongker / primary */
+    --success-green: #059669;
+    --shadow-subtle: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+    --shadow-hover: 0 20px 40px -10px rgba(15, 23, 42, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    padding: 50px 30px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+/* Tata Letak Grid Produk yang Rapih dan Simetris */
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Kartu Produk Gaya Premium Minimalist */
+.product-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-subtle);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: #cbd5e1;
+}
+
+.product-image-container {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background: #f1f5f9;
+    position: relative;
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.product-category {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-blue);
+    background: #e0f2fe;
+    padding: 4px 10px;
+    border-radius: 6px;
+    align-self: flex-start;
+}
+
+.product-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-color);
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--success-green);
+}
+
+.product-rating {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-main);
+    background: #fef3c7;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
